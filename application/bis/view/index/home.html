@@ -1,0 +1,14 @@
+{include file="public/head"}
+  <body>
+    <h1>商户管理</h1>
+    <p><small>商户名称：</small> {$dealer->name} </p>
+    <p><small>商户LOGO：</small> <img src="/uploads/{$dealer->logo}" style="max-height: 200px;"> </p>
+    <p><small>商户编号：</small> {$dealer->id} </p>
+    <p><small>商户主要经营:</small> {:getName('Category', $dealer->category_id)} </p>
+    <p><small>店面所在城市:</small> {:getName('City', $dealer->city_id)} </p>
+    <p><small>店面具体位置:</small> {$dealer->address} </p>
+    <p><small>地图：</small>
+      <img style="margin:20px" width="400" height="300" src="{:url('Index/getMap', ['lng'=>$dealer->x_point, 'lat'=>$dealer->y_point])}">
+    </p>
+  </body>
+</html> 

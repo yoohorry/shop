@@ -1,0 +1,44 @@
+{extend name="layout"}
+{block name="title"}
+<title> 首页 </title>
+{/block}
+
+{block name="content"}
+    <!-- 物品详情 -->
+    <!-- 分类列表 -->
+    <section class="goods-list">
+        <table class="table text-center table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>缩略图</th>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>所属分类</th>
+                    <th>在售城市</th>
+                    <th>相关操作</th>
+                </tr>
+            </thead>
+            <tbody class="goods">
+                <!-- 商品组 -->
+                {volist name="deals" id="deal"}
+                <tr>
+                    <input type="hidden" class="goods-id" value="{$deal->id}">
+                    <td><img src="/uploads/{$deal->image}" class="goods-img"></td>
+                    <td><span class="goods-name">{$deal->name}</span></td>
+                    <td><del class="float-left">￥ {$deal->origin_price}</del>&nbsp;<b class="float-right">￥ <span class="goods-price be-red">{$deal->selling_price}</span></b></td>
+                    <td>
+                      {:getName('Category', $deal->category_id)}
+                    </td>
+                    <td>
+                      {:getName('City' ,$deal->city_id)}
+                    </td>
+                    <td>
+                      <button class="btn btn-info put-into-cart-index"><i class="fa fa-cart-plus" aria-hidden="true"></i>购买</button>
+                      <a href="{:url('Index/info', ['id'=>$deal->id])}"><button class="btn btn-info"><i class="fa fa-question-circle" aria-hidden="true"></i>详情</button></a>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+    </section>
+{/block}

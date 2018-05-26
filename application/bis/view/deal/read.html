@@ -1,0 +1,24 @@
+{include file="public/head"}
+  <body>
+    <!-- 内容 -->
+    <div class="container">
+        <div class="row">
+            <!-- 表单 -->
+            <div class="col-lg-12">
+                <h3 class="text-center">商品详情</h3>
+                <p><small>商品id：</small> {$deal->id} </p>
+                <p><small>商品名称：</small> {$deal->name} </p>
+                <p><small>商品图片：<img src="/uploads/{$deal->image}" style="max-height: 200px;"> </p>
+                <p><small>商品简介：</small> {$deal->desc} </p>
+                <p><small>商品价格：</small>￥{$deal->origin_price} / ￥{$deal->selling_price} </p>
+                <p><small>创建时间：</small> {$deal->create_time} </p>
+                <p><small>更新时间：</small> {$deal->update_time} </p>
+                <p><small>备注说明：</small> {if condition="$deal->note"} {$deal->note} {else} 暂无说明 {/if} </p>
+                <p><small>当前状态：</small> {$deal->status|getStatus} </p>
+            </div>
+        </div>
+    </div>
+
+    {include file="public/common_js"}
+  </body>
+</html> 

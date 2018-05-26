@@ -1,0 +1,21 @@
+{include file="public/head"}
+  <body>
+    <!-- 内容 -->
+    <div class="container">
+        <div class="row">
+            <!-- 表单 -->
+            <div class="col-lg-12">
+                <h3 class="text-center">城市详情</h3>
+                <p><small>城市id：</small> {$city->id} </p>
+                <p><small>城市名称：</small> {$city->name} </p>
+                <p><small>城市所属：</small> {:getName('City', $city->pid)} </p>
+                <p><small>创建时间：</small> {$city->create_time} </p>
+                <p><small>更新时间：</small> {$city->update_time} </p>
+                <p><small>当前状态：</small> <a href="{:url('City/status', ['id'=>$city->id, 'status'=>$city->status==0?1:0 ])}">{$city->status|getStatus}</a> </p>
+            </div>
+        </div>
+    </div>
+
+    {include file="public/common_js"}
+  </body>
+</html> 

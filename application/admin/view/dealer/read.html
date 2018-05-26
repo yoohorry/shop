@@ -1,0 +1,27 @@
+{include file="public/head"}
+  <body>
+    <!-- 内容 -->
+    <div class="container">
+        <div class="row">
+            <!-- 表单 -->
+            <div class="col-lg-12">
+                <h3 class="text-center">商户详情</h3>
+                <p><small>商户id：</small> {$deal->id} </p>
+                <p><small>商户名称：</small> {$deal->name} </p>
+                <p><small>注册邮箱：{$deal->email}</small></p>
+                <p><small>用户名：{$deal->username}</small></p>
+                <p><small>开户银行：{$deal->bank_name}</small></p>
+                <p><small>开户人：{$deal->bank_user}</small></p>
+                <p><small>银行卡号：{$deal->bank_numb}</small></p>
+                <p><small>Logo：<img src="/uploads/{$deal->logo}" style="max-height:200px;"></small></p>
+                <p><small>主营业务：</small>{:getName('category', $deal->category_id)}</p>
+                <p><small>创建时间：</small> {$deal->create_time} </p>
+                <p><small>更新时间：</small> {$deal->update_time} </p>
+                <p><small>当前状态：</small> <a href="{:url('Dealer/guoshen', ['id'=>$deal->id])}">{$deal->status|getStatus}</a> </p>
+            </div>
+        </div>
+    </div>
+
+    {include file="public/common_js"}
+  </body>
+</html> 

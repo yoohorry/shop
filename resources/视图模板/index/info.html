@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <!-- 编码 -->
+    <meta charset="utf-8">
+    <!-- 页面支持响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <!-- index CSS -->
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <title>商品详情</title>
+  </head>
+  <body>
+    <!-- 导航 -->
+    <nav class="top-nav theme-color">
+      <dir class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="javascript:;" id="show-cities"> 当前城市：广元 &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="btn-group float-right">
+              <button type="button" class="btn btn-secondary dropdown-toggle user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="avatar">
+                  <img src="../assets/img/oneMoreNight.jpg">
+                </div>
+                &nbsp;
+                请您登陆~
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">登陆</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">注册</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dir>
+    </nav>
+    
+    <div id="cities" class="theme-color">
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+    </div>
+    
+    <!-- logo & 搜索框 & 购物车 -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <h1 class="col-lg-3 logo"> Logo <small>宣传语</small> </h1>
+          <div class="col-lg-6 search">
+            <div class="input-group theme-color-border">
+                <input type="text">
+                <button><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
+            </div>
+          </div>
+          <div class="col-lg-3 text-center cart">
+            <a href="cart.html" class="theme-color"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="goods-number">0</span> 购物车</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 物品详情 -->
+    <section class="goods-info">
+        <div class="container">
+            <div class="row goods-info-box">
+                <div class="col-lg-6 text-center">
+                    <img src="../assets/img/oneMoreNight.jpg" class="goods-img">
+                    <p class="goods-info-name">
+                        <button class="btn btn-info btn-block put-into-cart-index"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;点击加入购物车</button>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <input type="hidden" class="goods-id" value="1">
+                    <p class="goods-info-details"><span class="goods-name">假定的商品</span></p>
+                    <p class="goods-info-details"> 商品简介：
+                        <br>这个好！
+                        <br>这个真好！
+                        <br>这个非常好！
+                    </p>
+                    <hr>
+                    <p class="goods-info-details"> 商品原价：￥ <span class="origin-price">90</span> </p>
+                    <p class="goods-info-details"> 当前售价：￥ <span class="selling_price goods-price be-red">80</span> </p>
+                    <p class="goods-info-details"> 库存仅剩：<span class="count be-red">1</span> 件(个) </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 脚注 -->
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 text-center theme-color-secondary">
+            &copy; horry
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- jquery JS -->
+    <script src="../assets/js/jquery3.2.1.min.js"></script>
+    <!-- popper JS -->
+    <script src="../assets/js/popper.min.js"></script>
+    <!-- bootstrap JS -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- index JS -->
+    <script src="../assets/js/index.js"></script>
+  </body>
+</html>

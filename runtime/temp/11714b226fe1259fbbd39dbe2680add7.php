@@ -1,0 +1,50 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"C:\laragon\www\shop\public/../application/index\view\user\register.html";i:1526440944;}*/ ?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+    <!-- index CSS -->
+    <link rel="stylesheet" href="/static/assets/css/index.css">
+    <title>测试</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">新用户注册</h1>
+        <hr>
+        <form method="POST" action="<?php echo url('User/createUser'); ?>">
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" class="form-control" id="email" placeholder="请输入密保邮箱..." name="email">
+            </div>
+            <div class="form-group">
+                <label for="username">账号</label>
+                <input type="text" class="form-control" id="username" placeholder="请输入账号..." name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password">
+            </div>
+            <div class="form-group">
+                <label for="name">昵称</label>
+                <input type="text" class="form-control" id="name" placeholder="请输入昵称" name="name">
+            </div>
+            <div class="form-group">
+                <label for="input-captcha">验证码</label>
+                <img src="<?php echo captcha_src(); ?>" id="captcha" width="100%" height="60" style="margin-bottom: 15px;" onclick="this.src='<?php echo captcha_src(); ?>'"
+                    style="cursor: pointer;">
+                <input type="text" class="form-control" id="input-captcha" placeholder=" 请输入验证码..." name="captcha">
+            </div>
+            <button type="submit" class="btn btn-primary">注册</button>
+        </form>
+    </div>
+</body>
+
+</html>

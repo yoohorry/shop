@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <!-- 编码 -->
+    <meta charset="utf-8">
+    <!-- 页面支持响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <!-- index CSS -->
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <title>商品列表</title>
+  </head>
+  <body>
+    <!-- 导航 -->
+    <nav class="top-nav theme-color">
+      <dir class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="javascript:;" id="show-cities"> 当前城市：广元 &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="btn-group float-right">
+              <button type="button" class="btn btn-secondary dropdown-toggle user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="avatar">
+                  <img src="../assets/img/oneMoreNight.jpg">
+                </div>
+                &nbsp;
+                请您登陆~
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">登陆</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">注册</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dir>
+    </nav>
+    
+    <div id="cities" class="theme-color">
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+      <a href="">城市</a>
+    </div>
+    
+    <!-- logo & 搜索框 & 购物车 -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <h1 class="col-lg-3 logo"> Logo <small>宣传语</small> </h1>
+          <div class="col-lg-6 search">
+            <div class="input-group theme-color-border">
+                <input type="text">
+                <button><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
+            </div>
+          </div>
+          <div class="col-lg-3 text-center cart">
+            <a href="cart.html" class="theme-color"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="goods-number">0</span> 购物车</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 分类列表 -->
+    <section class="goods-list">
+        <table class="table text-center table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>缩略图</th>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>所属分类</th>
+                    <th>库存</th>
+                    <th>相关操作</th>
+                </tr>
+            </thead>
+            <tbody class="goods">
+                <!-- 商品组 -->
+                <tr>
+                    <input type="hidden" class="goods-id" value="1">
+                    <td><img src="../assets/img/oneMoreNight.jpg" class="goods-img"></td>
+                    <td><span class="goods-name">假定的商品</span></td>
+                    <td><del class="float-left">￥ 90</del>&nbsp;<b class="float-right">￥ <span class="goods-price be-red">80</span></b></td>
+                    <td>
+                        分类名称
+                    </td>
+                    <td>
+                        <span class="be-red">1</span>
+                    </td>
+                    <td>
+                      <button class="btn btn-info put-into-cart-index"><i class="fa fa-cart-plus" aria-hidden="true"></i>购买</button>
+                      <a href="info.html"><button class="btn btn-info"><i class="fa fa-question-circle" aria-hidden="true"></i>详情</button></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 脚注 -->
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 text-center theme-color-secondary">
+            &copy; horry
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- jquery JS -->
+    <script src="../assets/js/jquery3.2.1.min.js"></script>
+    <!-- popper JS -->
+    <script src="../assets/js/popper.min.js"></script>
+    <!-- bootstrap JS -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- index JS -->
+    <script src="../assets/js/index.js"></script>
+  </body>
+</html>

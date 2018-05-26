@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 编码 -->
+  <meta charset="utf-8">
+  <!-- 页面支持响应式 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- bootstrap CSS -->
+  <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+  <!-- fontawesome CSS -->
+  <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+  <!-- index CSS -->
+  <link rel="stylesheet" href="/static/assets/css/index.css">
+  <!-- 标题 -->
+  {block name="title"}{/block}
+</head>
+
+<body>
+  <!-- 导航 -->
+  <nav class="top-nav theme-color">
+    <dir class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <a href="javascript:;" id="show-cities"> 当前城市：{:getName('City' ,$defaultCity)} &nbsp;
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </a>
+          &nbsp;&nbsp;
+          <a href="{:url('Index/index', ['cityId' => $defaultCity])}">返回首页</a>
+          <div class="btn-group float-right">
+            <button type="button" class="btn btn-secondary dropdown-toggle user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar">
+                
+              </div>
+              {if condition="!$username"}
+                &nbsp; 请您登陆
+              {else}
+                {$username}
+              {/if}
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#exampleModal">登陆</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{:url('User/register')}">注册</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dir>
+  </nav>
+
+  <div id="cities" class="theme-color">
+    {volist name="cities" id="city"}
+    <a href="{:url('Index/index', ['cityId'=>$city->id])}"> {$city->name} </a>
+    {/volist}
+  </div>
+
+  <!-- logo & 搜索框 & 购物车 -->
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <h1 class="col-lg-3 logo"> Logo
+          <small> 宣传语 </small>
+          </a>
+        </h1>
+        <div class="col-lg-6 search">
+          <form action="{:url('index/search')}" method="POST">
+            <div class="input-group theme-color-border">
+              <input type="text" name="keyword" placeholder="想要买些什么呢?...">
+              <button type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i> 搜索
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-3 text-center cart">
+          <a href="{:url('Index/cart', ['cityId'=>$defaultCity])}" class="theme-color">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span class="goods-number">0</span> 购物车</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {block name="content"}{/block}
+
+  <!-- 脚注 -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 text-center theme-color-secondary">
+          &copy; horry
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 登陆模态框 -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">登陆</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="POST" action="{:url('User/login')}">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="username">账号</label>
+              <input type="text" class="form-control" id="username" placeholder="请输入账号..." name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">密码</label>
+              <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password">
+            </div>
+            <div class="form-group">
+              <label for="input-captcha">验证码</label>
+              <img src="{:captcha_src()}" id="captcha" width="100%" height="60" style="margin-bottom: 15px;" onclick="this.src='{:captcha_src()}'"
+                style="cursor: pointer;">
+              <input type="text" class="form-control" id="input-captcha" placeholder=" 请输入验证码..." name="captcha">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-secondary">重置</button>
+            <button type="submit" class="btn btn-primary">登陆</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  {block name="javaScript"}
+  <!-- jquery JS -->
+  <script src="/static/assets/js/jquery3.2.1.min.js"></script>
+  <!-- popper JS -->
+  <script src="/static/assets/js/popper.min.js"></script>
+  <!-- bootstrap JS -->
+  <script src="/static/assets/js/bootstrap.min.js"></script>
+  <!-- index JS -->
+  <script src="/static/assets/js/index.js"></script> {/block}
+</body>
+
+</html>

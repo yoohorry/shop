@@ -1,0 +1,380 @@
+/* 主体配色整理 */
+    a {
+        color: #fff;
+    }
+
+    .theme-color {
+        background: #ddd;
+    }
+
+    .theme-color-border {
+        border: 2px solid #ddd;
+    }  
+
+    .theme-color-secondary {
+        background: #ccc;
+    }
+    
+    .section-one .side-nav .active {
+        background: #ccc;
+    }
+
+    .header .cart a:hover{
+        background: #ccc;
+    }
+
+    .section-two .goods .item button:hover {
+        color: #999;
+        background: rgba(0,0,0,0.1);
+    }
+
+    .header .search .input-group button:hover {
+        background: #ccc;
+        color: #999;
+    }
+
+    a:hover {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .header .cart a {
+        border-left: 1px #ccc solid;
+    }    
+
+    .be-red {
+        color: red;
+    }
+/* 布局与样式重置 */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font-size: 20px;
+    }
+/* 导航 */
+    .top-nav {
+        /* 设置高度 */
+        height: 50px;
+    }
+
+    .top-nav #show-cities {
+        /* 城市切换按钮设置：行高50px 以便字体垂直居中 */
+        line-height: 50px;
+    }
+
+    .top-nav .user {
+        /* nav总高50px 设置用户按钮高40px 为垂直居中上边5px  */
+        height: 40px;
+        margin-top: 5px;
+    }
+
+    .top-nav .user .avatar {
+        /* 用户按钮头像框 左浮动给个宽度 */
+        float: left;
+        width: 30px;
+    }
+
+    .top-nav .user .avatar img {
+        /* 限制图片宽度：width=父元素的100% （30px） */
+        width: 100%;
+        /* 圆形图片 */
+        border-radius: 50%;
+    }
+
+    /* 城市框 */
+    #cities {
+        /* 默认隐藏，为了没美观给个最低高度，宽度为页面的30%，设置个上边框免得和导航挨在一起，弄个内边距美观点 */
+        display: none;
+        min-height: 200px;
+        width: 30%;
+        border-top: 1px #fff solid;
+        padding: 10px;
+        /* 重点：绝对定位 z-index:3 */
+        position: absolute;
+        z-index: 3;
+    }
+
+    /* 将a标签设置为块级元素然后浮动，可以避免一个城市因为占满了，“城”站一行，“市”到另外一行 */
+    #cities a {
+        display: block;
+        float: left;
+        margin: 10px 5px;
+    }
+
+/* 头部 */
+    .header * {
+        /* 首先把container>row>col提供的内边距干掉（套container是为了将内容约束在一定宽度不占满全屏，但是不要它提供的内边距） */
+        padding: 0;
+    }
+
+    .header .logo {
+        /* 不要下边距 */
+        margin-bottom: 0;
+        /* 设置下字体大小和粗细 */
+        font-size: 50px;
+        font-weight: 900;
+        /* 整体的高度和行高以便让字体垂直居中 */
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .header .logo small {
+        /* 宣传语用小点的字 */
+        font-size: 12px;
+    }
+
+    .header .search {
+        /* header里面的每一列都高100px */
+        height: 100px;
+    }
+
+    .header .search .input-group {
+        /* 为了让搜索框垂直居中，设置高度50px 上边距25px */
+        height: 50px;
+        margin-top: 25px;
+        /* 重点：为了让input和button看起来像是一体，给按钮组设置一个边框 */
+    }
+
+    .header .search .input-group input, .header .search .input-group button {
+        /* 重置input和button的样式 */
+        font-size: 25px;
+        /* 重点：去掉按钮和input的边框和外线，设置他们为块级元素左浮动 */
+        border: 0;
+        outline: 0;
+        display: block;
+        float: left;
+    }
+
+    .header .search .input-group input {
+        /* 设置宽度 */
+        width: 80%;
+    }
+
+    .header .search .input-group button {
+        /* 设置宽度 */
+        width: 20%;
+        /* 设置按钮里面的字的颜色 */
+        color: #fff;
+    }
+
+    .header .cart {
+        /* 每一列的高度都100px */
+        height: 100px;
+    }
+
+    .header .cart a {
+        /* 重置购物车a标签的样式，做成像一个按钮，首先得设置为块级元素 */
+        display: block;
+        /* 高度50px 距离上面25px（必须和搜索框一样）宽度100% */
+        height: 50px;
+        margin-top: 25px;
+        width: 100%;
+        /* 行高=高度以便居中 */
+        line-height: 50px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+/* 第一屏 */
+    .section-one * {
+        /* 同样干掉栅格系统的内边距 */
+        padding: 0;
+    }
+
+    .section-one .side-nav {
+        /* 第一屏高度都是300px */
+        height: 300px;
+    }
+
+    .section-one .side-nav .navs {
+        /* 把a标签变成块级元素 设置内边距 */
+        display: block;
+        padding: 15px 10px;
+    }
+
+    .links {
+         /* 侧边栏链接组 默认隐藏 绝对定位 z-index弄成2不然盖不住轮播图的提示符 */
+        display: none;
+        position: absolute;
+        z-index: 2;
+        /* 宽度为轮播图整个一块的40% 高度占满(300px) */
+        width: 40%;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .links h4 {
+        /* 标题 */
+        color: #f52233;
+    }
+
+    .link {
+        /* 链接 */
+        display: block;
+        float: left;
+        margin: 5px 10px;
+        font-size: 13px;
+    }
+
+    .link:hover {
+        /* 给链接一个悬停有下划线的样式 */
+        text-decoration: underline;
+    }
+
+    /* 指示符弄个z-index=1 小于 链接组的2，又能出现在图片上 */
+    .carousel-indicators {
+        z-index: 1;
+    }
+
+    /* 约束图片大小：宽度必须站满，但高度必须是300px */
+    .section-one .carousel img {
+        min-width: 100%;
+        height: 300px;
+    }
+
+    /* 右边的图片组同样高度300px */
+    .section-one .right-images {
+        height: 300px;
+    }
+
+    /* 这里是一个堆叠的col-12列，每张图片占总体高度的一半 */
+    .section-one .right-images .images img{
+        min-width: 100%;
+        height: 150px;
+    }
+
+/* 第二屏 */
+    .section-two *{ 
+        /* 弄个上边距免得贴着第一屏 */
+        margin-top: 10px;
+    }
+
+    .section-two .goods img {
+        /* 将图片设置为块级元素宽度为格栅col-2的宽度 */
+        display: block;
+        width: 100%;
+    }
+
+    .section-two .goods p {
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .section-two .goods p b {
+        color: #f52233;
+    }
+
+    .section-two .goods .item {
+        /* 按钮网上一点 */
+        margin-top: -10px;
+        padding: 5px;
+    }
+
+    .section-two .goods .item button {
+        color: #fff;
+        height: 30px;
+        width: 100%;
+        font-size: 15px;
+        border: 0;
+        outline: 0;
+    }
+
+/* 手机适配 媒体查询 */
+@media (max-width:992px) {
+    /* logo居中 */
+    .header .logo {
+        text-align: center;
+    }
+
+    /* 按钮样式改变 */
+    .section-one .side-nav .navs {
+        /* 设置宽度和左浮动以便并排 */
+        width: 20%;
+        float:left;
+        /* 设置居中 */
+        margin: 0 auto;
+        /* 内部字体居中 */
+        text-align: center;
+    }
+
+    .section-one .side-nav {
+        /* 不再限制侧边栏的高度为300px 因为它一个人一排了 */
+        height: auto;
+    }
+
+    .section-one .links {
+        /* 为了美观，把链接组的宽度也设置为100% */
+        width: 100%;
+    }
+
+    .section-one .right-images .images {
+        /* 设置图片框并排，不再重叠，2张图片，所以设置宽度为它自身的一半然后左浮动就可以让俩col-12包的张图片并排显示了 */
+        width: 50%;
+        float: left;
+        padding: 10px 0;
+    }
+
+    .section-one .right-images .images img {
+        /* 图片样式 */
+        width: 100%;
+        height: auto;
+    }
+
+    .section-one .right-images {
+        /* 右边静态图整体高度 */
+        height: auto;
+    }
+
+    .section-two .goods img {
+        /* 手机适配：图片内边距 */
+        padding: 50px;
+    }
+
+    .section-two .goods .item button {
+        /* 购买按钮高度 */
+        height: 50px;
+    }
+}
+
+footer {
+    margin-top: 10px;
+}
+
+/* 购物车 */
+    .cart .deal-list .deal-row {
+        font-size: 20px;
+        height: 150px;
+        line-height: 150px;
+    }
+
+    .cart .deal-list .deal-img {
+        max-width: 100%;
+        height: 150px;
+    }
+
+    .cart .buy {
+        padding: 50px 20%;
+    }
+
+/* 商品详情 */
+.goods-info .goods-info-box {
+    padding: 20px;
+}
+
+.goods-info .goods-info-box img {
+    width: 80%;
+    max-height: 300px;
+}
+
+.goods-info .goods-info-box .goods-info-name {
+    margin-top: 50px;
+    padding: 0 100px;
+}
+
+.goods-list .goods .goods-img{
+    max-width: 100px;
+}
