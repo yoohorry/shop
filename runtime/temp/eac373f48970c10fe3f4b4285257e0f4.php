@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"C:\laragon\www\shop\public/../application/admin\view\index\index.html";i:1527170383;s:59:"C:\laragon\www\shop\application\admin\view\public\head.html";i:1525238179;s:64:"C:\laragon\www\shop\application\admin\view\public\common_js.html";i:1525249231;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"C:\laragon\www\shop\public/../application/admin\view\index\index.html";i:1527643422;s:59:"C:\laragon\www\shop\application\admin\view\public\head.html";i:1525238179;s:64:"C:\laragon\www\shop\application\admin\view\public\common_js.html";i:1525249231;}*/ ?>
 <!doctype html>
 <html lang="zh-CN">
   <head>
@@ -21,8 +21,8 @@
     <div class="nav theme-color">
         <div class="user text-center">
           <a href="">
-            <img class="user-avatar" src="/static/assets/img/oneMoreNight.jpg">
-            <span class="user-username">horry</span>
+            <img class="user-avatar" src="/static/assets/img/admin.jpg">
+            <span class="user-username">后台总管理员</span>
           </a>
         </div>
         <div class="sidebar theme-color-secondary">
@@ -80,7 +80,7 @@
           <a href="<?php echo url('User/logout'); ?>" class="logout float-right">退出登陆</a>
         </div>
         <div class="content">
-          <iframe src="<?php echo url('Index/home'); ?>" frameborder="0" id="page"></iframe>
+          <iframe src="<?php echo url('Tjw/index'); ?>" frameborder="0" id="page"></iframe>
         </div>
         <div class="footer theme-color-secondary text-center">
           &copy; horry

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"C:\laragon\www\shop\public/../application/index\view\index\index.html";i:1527248409;s:54:"C:\laragon\www\shop\application\index\view\layout.html";i:1527300641;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"C:\laragon\www\shop\public/../application/index\view\index\index.html";i:1527645038;s:54:"C:\laragon\www\shop\application\index\view\layout.html";i:1527300641;}*/ ?>
 <!doctype html>
 <html lang="zh-CN">
 
@@ -143,13 +143,19 @@
           <!-- 轮播图片 -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="/static/assets/img/1.jpg">
+              <a href="<?php echo $tjw[0]->url; ?>">
+              <img src="/uploads/<?php echo $tjw[0]->image; ?>">
+              </a>
             </div>
             <div class="carousel-item">
-              <img src="/static/assets/img/2.jpg">
+              <a href="<?php echo $tjw[1]->url; ?>">
+              <img src="/uploads/<?php echo $tjw[1]->image; ?>">
+              </a>
             </div>
             <div class="carousel-item">
-              <img src="/static/assets/img/3.jpg">
+              <a href="<?php echo $tjw[2]->url; ?>">
+              <img src="/uploads/<?php echo $tjw[2]->image; ?>">
+              </a>
             </div>
           </div>
           <!-- 左右切换按钮 -->
@@ -163,10 +169,14 @@
       </div>
       <div class="col-lg-2 right-images">
         <div class="col-lg-12 images">
-          <img src="/static/assets/img/4.jpg">
+          <a href="<?php echo $tjw[3]->url; ?>">
+          <img src="/uploads/<?php echo $tjw[3]->image; ?>" style="max-width: 100%">
+          </a>
         </div>
         <div class="col-lg-12 images">
-          <img src="/static/assets/img/5.jpg">
+          <a href="<?php echo $tjw[4]->url; ?>">
+          <img src="/uploads/<?php echo $tjw[4]->image; ?>" style="max-width: 100%">
+          </a>
         </div>
       </div>
     </div>

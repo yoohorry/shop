@@ -158,6 +158,16 @@ CREATE TABLE `bill`(
 )ENGINE=innoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 ALTER TABLE `bill` ADD `user_email` VARCHAR(255) NOT NULL AFTER `user_id`;
 
+
+-- 推荐位表
+CREATE TABLE `tuijianwei`(
+    `id` INT(10) UNSIGNED AUTO_INCREMENT,
+    `url` varchar(255) NOT NULL DEFAULT '',
+    `image` VARCHAR(255) DEFAULT '暂无预览图',
+    `desc` VARCHAR(255) DEFAULT '暂无简介',
+    PRIMARY KEY (`id`)
+)ENGINE=innoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
 -- 数据插入
 INSERT INTO `admin` (`id`, `name`, `create_time`, `update_time`, `username`, `password`, `avatar`, `login_ip`, `login_time`, `changepwd_time`) VALUES ('1000000000', '刘浩宇', '0', '0', 'liuhaoyu', MD5('liuhaoyu'), '暂无头像', '127.0.0.1', '0', '0');
 INSERT INTO `city` (`name`, `pid`, `status`) VALUES ('四川', '0', 1);
@@ -173,3 +183,8 @@ INSERT INTO `category` (`name`, `pid`, `status`) VALUES ('KTV', '2', 1);
 INSERT INTO `category` (`name`, `pid`, `status`) VALUES ('酒吧', '2', 1);
 INSERT INTO `category` (`name`, `pid`, `status`) VALUES ('酒店', '3', 1);
 INSERT INTO `category` (`name`, `pid`, `status`) VALUES ('民宿', '3', 1);
+INSERT INTO `tuijianwei` (`url`) VALUES ('请输入url');
+INSERT INTO `tuijianwei` (`url`) VALUES ('请输入url');
+INSERT INTO `tuijianwei` (`url`) VALUES ('请输入url');
+INSERT INTO `tuijianwei` (`url`) VALUES ('请输入url');
+INSERT INTO `tuijianwei` (`url`) VALUES ('请输入url');

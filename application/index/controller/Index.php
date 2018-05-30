@@ -8,6 +8,7 @@ use think\Session;
 use app\common\model\Category;
 use app\common\model\City;
 use app\common\model\Deal;
+use app\common\model\Tuijianwei;
 
 class Index extends Controller
 {   
@@ -28,7 +29,7 @@ class Index extends Controller
     /* 首页查询 */
         // 查询分类
         $cates = Category::getIndexCates();
-        // 推荐位部分：根据城市和分类获取本地5种热销商品
+        // 根据城市和分类获取本地5种热销商品
         $deals0 = Deal::getDealsByCityAndCate(Session::get('defaultCity', 'index'), $cates[0]->id);
         $deals1 = Deal::getDealsByCityAndCate(Session::get('defaultCity', 'index'), $cates[1]->id);
         $deals2 = Deal::getDealsByCityAndCate(Session::get('defaultCity', 'index'), $cates[2]->id);
@@ -36,6 +37,9 @@ class Index extends Controller
         $deals4 = Deal::getDealsByCityAndCate(Session::get('defaultCity', 'index'), $cates[4]->id);
         // 热销商品部分：获取本地所有热销商品
         $hotDeals = Deal::getDealsByCity(Session::get('defaultCity', 'index'));
+        // 推荐位
+        $tuijianwei  = Tuijianwei::select();
+        // dump($tuijianwei[0]->image);die;
 
         return $this->fetch('', [
             // 默认城市和所有城市列表必须要有。因为layout.html布局模板需要
@@ -48,6 +52,7 @@ class Index extends Controller
             'deals3' => $deals3,
             'deals4' => $deals4,
             'hotDeals' => $hotDeals,
+            'tjw' => $tuijianwei,
             'username' => Session::get('user', 'index')
         ]);
     }

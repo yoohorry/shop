@@ -84,7 +84,7 @@ class Deal extends Model
     public function doSearch($keyword) {
         $where = [
             'status' => 1,
-            'name' => ['like', $keyword],
+            'name' => ['like', '%'.$keyword.'%'],
         ];
         $order = [
             'listorder' => 'desc',
